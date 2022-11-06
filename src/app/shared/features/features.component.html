@@ -1,0 +1,45 @@
+<!-- our features -->
+<section class="section bg-light" id="feature">
+  <div class="container">
+    <div *ngFor="let value of featureList" class="row align-items-center mt-5">
+      <div class="col-lg-5 col-md-6">
+        <div class="position-relative">
+          <img
+            class="img-fluid rounded"
+            src="{{value.image}}"
+            alt=""
+          />
+<!--           <div
+            class="rounded bg-primary text-center text-white user-box d-none d-lg-block px-5 py-4"
+          >
+            <img
+              class="img-fluid"
+              src="assets/layout/images/counter-img-3.png"
+              alt=""
+            />
+            <h3 class="fw-light mt-3 mb-0">200+ Users</h3>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-2 col-md-6 mt-sm-0 mt-5">
+        <!--                 <h6 class="text-uppercase text-primary mb-3">{{value.sub_title}}</h6>
+ -->
+        <h3 class="text-dark mb-4">{{ value.title }}</h3>
+        <p class="text-muted mb-4">{{ value.content }}</p>
+        <h6 *ngFor="let item of value.contentList" class="text-dark">
+          <!--           <i-feather
+            name="{{ item.icon }}"
+            class="icon-xs text-primary me-3"
+          ></i-feather> -->
+          <i class="fa-solid {{item.icon}} fa-lg service-icon"></i>
+          {{ item.content }}
+        </h6>
+        <!--                 <a href="javascript:void(0);" [ngxScrollTo]="'#home'" class="btn btn-primary">Learn more <i-feather
+                        name="chevrons-right" class="icon-xs"></i-feather></a> -->
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</section>
+<!-- end features -->

@@ -1,0 +1,22 @@
+
+.hero-one-4 {
+  background-color: grey;
+  .clip-text {
+    font-size: 60px !important;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .clip-text_one {
+    background-image: none;
+    background-color: #fff;
+  }
+  .hero-one-4-subtitle{
+    color: #fff;
+  }
+  .front-color{
+    color: #008BC4;
+    background-color: #fff;
+  }
+}
+

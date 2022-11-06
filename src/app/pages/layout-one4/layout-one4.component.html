@@ -1,0 +1,80 @@
+<!-- start navbar -->
+<nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar" (window:scroll)="windowScroll()">
+    <div class="container">
+        <a routerLink="/layout-one-4" class="navbar-brand">
+            <img src="../../../assets/layout/images/logoHorizontal.png" class="logo-light" alt="" height="75" />
+            <img src="../../../assets/layout/images/logoHorizontal.png" class="logo-dark" alt="" height="75" />
+        </a>
+        <a href="javascript:void(0)" class="navbar-toggler" (click)="toggleMenu()" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon">
+                <i-feather name="menu"></i-feather>
+            </span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto navbar-center mt-lg-0 mt-2">
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active':currentSection === 'home'}" [ngxScrollTo]="'#home'"
+                        href="javascript: void(0);">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active':currentSection === 'services'}" [ngxScrollTo]="'#services'"
+                        href="javascript: void(0);">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active':currentSection === 'feature'}" [ngxScrollTo]="'#feature'"
+                        href="javascript: void(0);">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active':currentSection === 'portfolio'}" [ngxScrollTo]="'#portfolio'"
+                        href="javascript: void(0);">Clientes</a>
+                </li>
+ <!--           <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active':currentSection === 'portfolio'}"
+                        [ngxScrollTo]="'#portfolio'" href="javascript: void(0);">Portfolio</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active':currentSection === 'pricing'}" [ngxScrollTo]="'#pricing'"
+                        href="javascript: void(0);">Pricing</a>
+                </li> -->
+            </ul>
+            <a href="javascript:void(0);" [ngxScrollTo]="'#contact'" class="btn btn-sm nav-btn text-primary mb-4 mb-lg-0">Contactanos
+                <i-feather name="chevrons-right" class="icon-xxs ms-1"></i-feather>
+            </a>
+        </div>
+    </div>
+    <!-- end container -->
+</nav>
+<!-- end navbar -->
+
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+    <!-- start hero -->
+    <section class="hero-one-4 d-flex justify-content-center align-items-center overflow-hidden" id="home"
+        style="background-image: url(assets/layout/images/construction/container.jpg);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="text-center mb-5">
+                        <h5 class=" text-uppercase fs-5 position-relative hero-one-4-subtitle">
+                            {{sub_title}}
+                        </h5>
+                        <div class="clip-text clip-text_one text-uppercase lh-1 fw-bold mb-2">{{heading}}</div>
+                        <p class=" front-color">{{content}}</p>
+<!--                         <a href="javascript:void(0);" [ngxScrollTo]="'#home'"
+                            class="btn btn-light text-primary fw-medium text-uppercas">Know More <i-feather
+                                name="chevrons-right" class="icon-xs"></i-feather></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- end hero -->
+    <app-services></app-services>
+    <app-features></app-features>
+    <!-- <app-client></app-client> -->
+    <app-portfolio></app-portfolio>
+    <app-pricing></app-pricing>
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+</div>
